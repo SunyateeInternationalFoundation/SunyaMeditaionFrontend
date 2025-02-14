@@ -1,12 +1,13 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-
+import AllRoutes from "./components/HomePage/AllRoutes";
 function App() {
   return (
-    <>
-      <h1 className="text-gray-600 font-bold text-center">
-        Sunya Meditation Website
-      </h1>
-    </>
+    <div>
+      <Routes>
+        <Route path="/*" element={<AllRoutes />}></Route>
+      </Routes>
+    </div>
   );
 }
 
