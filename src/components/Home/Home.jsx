@@ -1,5 +1,6 @@
-import React from "react";
-
+import Amukta from "../../assets/Amukta.jpg";
+import Bhoomi from "../../assets/Bhoomi.jpg";
+import DrSavera from "../../assets/DrSavera.jpg";
 const Home = () => {
   return (
     <>
@@ -14,10 +15,10 @@ const Home = () => {
         </div>
 
         <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-[#0066CC] text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+          <h1 className="text-[#342e86] text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
             Pause, Breathe, and Thrive.
           </h1>
-          <p className="text-gray-800 text-xl md:text-2xl mb-8 max-w-3xl">
+          <p className="text-white text-xl md:text-2xl mb-8 max-w-3xl">
             We're here to help you feel better every moment.
           </p>
         </div>
@@ -92,6 +93,104 @@ const Home = () => {
               <p className="text-gray-600">
                 Achieve harmony between your mind, body, and spirit.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+            Meet Our Team
+          </h2>
+
+          <div className="bg-[#f0f7ff] px-4 py-12 mb-8 rounded-xl">
+            <div className="flex flex-col md:flex-row items-center gap-8 max-w-7xl mx-auto">
+              <div className="w-full md:w-1/3">
+                <img
+                  src={DrSavera}
+                  alt="Dr. Rajesh Savera"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+              <div className="w-full md:w-2/3 md:pl-8">
+                <h3 className="text-2xl font-bold mb-2">Dr. Rajesh Savera</h3>
+                <p className="text-lg text-gray-700 mb-2">BAMS, MS [Psych]</p>
+                <p className="text-gray-700 mb-4">
+                  Licensed Physician, Psychotherapist & Counselor
+                </p>
+                <p className="text-gray-700 mb-2">MCIM Reg. No.: I-40012-A1</p>
+                <blockquote className="italic text-gray-700 border-l-4 border-blue-500 pl-4 mt-4 mb-6">
+                  "As an Ayurveda Physician, I believe the body needs to be
+                  cared for—that's Prevention. As a Psychotherapist & Counselor,
+                  I believe the mind needs to be watched—that's Meditation. As a
+                  Seeker, I believe life needs to be realized—that's
+                  Liberation."
+                </blockquote>
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200">
+                  Book Appointment
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-[#f8fafc] px-4 py-12 mb-8 rounded-xl">
+            <div className="flex flex-col md:flex-row-reverse items-center gap-8 max-w-7xl mx-auto">
+              <div className="w-full md:w-1/3">
+                <img
+                  src={Amukta}
+                  alt="S. Amukta Malyada"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+              <div className="w-full md:w-2/3 md:pr-8">
+                <h3 className="text-2xl font-bold mb-2">S. Amukta Malyada</h3>
+                <p className="text-lg text-gray-700 mb-4">
+                  MSc Psychology (clinical specialization)
+                </p>
+                <blockquote className="italic text-gray-700 border-l-4 border-blue-500 pl-4 mt-4 mb-6">
+                  "Your journey is a tapestry of every challenge and triumph –
+                  each thread contributes to the masterpiece that is you." I
+                  combine clinical expertise with a passion for understanding
+                  the unique narratives of our lives, exploring how every
+                  experience shapes who we are."
+                </blockquote>
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200">
+                  Book Appointment
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-[#f0f7ff] px-4 py-12 rounded-xl">
+            <div className="flex flex-col md:flex-row items-center gap-8 max-w-7xl mx-auto">
+              <div className="w-full md:w-1/3">
+                <img
+                  src={Bhoomi}
+                  alt="Bhoomi Batham"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+              <div className="w-full md:w-2/3 md:pl-8">
+                <h3 className="text-2xl font-bold mb-2">Bhoomi Batham</h3>
+                <p className="text-lg text-gray-700 mb-4">
+                  (Pursuing) BA Psychology
+                </p>
+                <p className="text-gray-700 mb-2">
+                  लोका: समस्ता: सुखिनो भवन्तु
+                </p>
+                <p className="text-gray-700 mb-2">
+                  Lokah Samastah Sukhino Bhavantu
+                </p>
+                <blockquote className="italic text-gray-700 border-l-4 border-blue-500 pl-4 mt-4 mb-6">
+                  "May all beings everywhere be happy and free, and may my
+                  thoughts, words, and actions contribute to that happiness and
+                  freedom for all."
+                </blockquote>
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200">
+                  Book Appointment
+                </button>
+              </div>
             </div>
           </div>
         </div>
