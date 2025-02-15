@@ -1,10 +1,17 @@
+import { useState } from "react";
+import BookingModal from "../BookingModal";
+import DrSavera from "../../assets/DrSavera.jpg";
 import Amukta from "../../assets/Amukta.jpg";
 import Bhoomi from "../../assets/Bhoomi.jpg";
-import DrSavera from "../../assets/DrSavera.jpg";
+
 const Home = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
+
   return (
     <>
-      <div className="relative h-screen">
+      {/* Hero Section */}
+      {/* <div className="relative h-screen">
         <div className="absolute inset-0 w-full h-full">
           <img
             src="https://manhattanmentalhealthcounseling.com/wp-content/uploads/2019/07/4-Meditation-Techniques-that-Can-Improve-Awareness-and-Mental-Health-881x564.jpeg.webp"
@@ -21,10 +28,24 @@ const Home = () => {
           <p className="text-white text-xl md:text-2xl mb-8 max-w-3xl">
             We're here to help you feel better every moment.
           </p>
+          <button
+            onClick={() => {
+              setIsModalOpen(true);
+              setSelectedService({
+                name: "Meditation Session",
+                sessionType: "both",
+                locations: ["Pune"],
+              });
+            }}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200"
+          >
+            Book Appointment
+          </button>
         </div>
       </div>
 
-      <section className="py-20 px-4 bg-white">
+      {/* Benefits Section */}
+      {/* <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Discover Inner Peace Through Meditation
@@ -96,14 +117,16 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */} */}
 
+      {/* Team Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
             Meet Our Team
           </h2>
 
+          {/* Dr. Rajesh Savera */}
           <div className="bg-[#f0f7ff] px-4 py-12 mb-8 rounded-xl">
             <div className="flex flex-col md:flex-row items-center gap-8 max-w-7xl mx-auto">
               <div className="w-full md:w-1/3">
@@ -127,13 +150,28 @@ const Home = () => {
                   Seeker, I believe life needs to be realized—that's
                   Liberation."
                 </blockquote>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200">
+                <button
+                  onClick={() => {
+                    setIsModalOpen(true);
+                    setSelectedService({
+                      name: "Dr. Rajesh Savera",
+                      sessionType: "both",
+                      locations: ["Pune"],
+                      languages: ["English", "Marathi", "Hindi", "Gujarati"],
+                      consultationFee: 5000,
+                      followUpFee: 5000,
+                      duration: "60 mins"
+                    });
+                  }}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200"
+                >
                   Book Appointment
                 </button>
               </div>
             </div>
           </div>
 
+          {/* S. Amukta Malyada */}
           <div className="bg-[#f8fafc] px-4 py-12 mb-8 rounded-xl">
             <div className="flex flex-col md:flex-row-reverse items-center gap-8 max-w-7xl mx-auto">
               <div className="w-full md:w-1/3">
@@ -150,18 +188,30 @@ const Home = () => {
                 </p>
                 <blockquote className="italic text-gray-700 border-l-4 border-blue-500 pl-4 mt-4 mb-6">
                   "Your journey is a tapestry of every challenge and triumph –
-                  each thread contributes to the masterpiece that is you." I
-                  combine clinical expertise with a passion for understanding
-                  the unique narratives of our lives, exploring how every
-                  experience shapes who we are."
+                  each thread contributes to the masterpiece that is you."
                 </blockquote>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200">
+                <button
+                  onClick={() => {
+                    setIsModalOpen(true);
+                    setSelectedService({
+                      name: "S. Amukta Malyada",
+                      sessionType: "both",
+                      locations: ["Pune"],
+                      languages: ["English", "Hindi", "Telugu", "Kannada"],
+                      consultationFee: 0,
+                      followUpFee: 500,
+                      duration: "60 mins"
+                    });
+                  }}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200"
+                >
                   Book Appointment
                 </button>
               </div>
             </div>
           </div>
 
+          {/* Bhoomi Batham */}
           <div className="bg-[#f0f7ff] px-4 py-12 rounded-xl">
             <div className="flex flex-col md:flex-row items-center gap-8 max-w-7xl mx-auto">
               <div className="w-full md:w-1/3">
@@ -187,7 +237,17 @@ const Home = () => {
                   thoughts, words, and actions contribute to that happiness and
                   freedom for all."
                 </blockquote>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200">
+                <button
+                  onClick={() => {
+                    setIsModalOpen(true);
+                    setSelectedService({
+                      name: "Bhoomi Batham",
+                      sessionType: "both",
+                      locations: ["Pune"],
+                    });
+                  }}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200"
+                >
                   Book Appointment
                 </button>
               </div>
@@ -195,6 +255,13 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Booking Modal */}
+      <BookingModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        service={selectedService}
+      />
     </>
   );
 };
